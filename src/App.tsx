@@ -3,7 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
-import { Button } from "../lib/components/Button";
+import { Button, Header } from "../lib/main";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -23,6 +23,7 @@ function App() {
         <Button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </Button>
+        <Header />
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>

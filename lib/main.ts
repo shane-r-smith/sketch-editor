@@ -1,5 +1,4 @@
-export function helloAnything(thing: string): string {
-  return `Hello ${thing}!`;
-}
+import "./style.css";
 
 export { Button } from "./components/Button";
+export { Header } from "./components/Header";
