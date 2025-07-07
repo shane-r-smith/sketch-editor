@@ -1,9 +1,6 @@
+import styles from "./styles.module.css";
+
 export function Button(props: React.ButtonHTMLAttributes<HTMLButtonElement>) {
   const { className, ...restProps } = props;
-  return (
-    <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <button className={`${className}`} {...restProps} />
-    </>
-  );
+  return <button className={`${className} ${styles.button}`} {...restProps} />;
 }
