@@ -1,6 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
+import { libInjectCss } from "vite-plugin-lib-inject-css";
+import tailwindcss from "@tailwindcss/vite";
 
 import { extname, relative, resolve } from "path";
 import { fileURLToPath } from "node:url";
@@ -8,7 +10,7 @@ import { glob } from "glob";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), dts({ include: ["lib"] })],
+  plugins: [libInjectCss(), tailwindcss(), react(), dts({ include: ["lib"] })],
   build: {
     copyPublicDir: false,
     rollupOptions: {
