@@ -13,6 +13,14 @@ export function HexColourInput({
 }: BaseColourPickerProps) {
   const [currentColour, setCurrentColour] = useState(colord(colour).toHex());
 
+  const handleChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      setCurrentColour(event.target.value);
+      onChange(event.target.value, type);
+    },
+    [onChange, type]
+  );
+
   useEffect(() => {
     if (currentColour === colour) {
       return;
@@ -28,14 +36,6 @@ export function HexColourInput({
     setCurrentColour(colour);
     return;
   }, [colour, currentColour]);
-
-  const handleChange = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      setCurrentColour(event.target.value);
-      onChange(event.target.value, type);
-    },
-    [onChange, type]
-  );
 
   return (
     <Stack>
