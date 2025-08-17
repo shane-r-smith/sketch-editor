@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig, type UserConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
@@ -10,6 +10,11 @@ import { glob } from "glob";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [libInjectCss(), react(), dts({ include: ["lib"] })],
+  test: {
+    environment: "jsdom",
+    globals: true,
+    setupFiles: "./tests/setup.js",
+  },
   build: {
     copyPublicDir: false,
     rollupOptions: {
@@ -38,4 +43,4 @@ export default defineConfig({
       formats: ["es"],
     },
   },
-});
+} as UserConfig);
