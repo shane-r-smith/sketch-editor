@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<ColourPickerHistory /> > renders correctly and matches snapshot 1`] = `
+<div>
+  <div
+    class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-row MuiGrid-spacing-xs-1 css-1yvsbrk-MuiGrid-root"
+  >
+    <div
+      class="MuiBox-root css-10zmmb7"
+    />
+    <div
+      class="MuiBox-root css-1wy9ye4"
+    />
+    <div
+      class="MuiBox-root css-1qu7dg4"
+    />
+  </div>
+</div>
+`;
