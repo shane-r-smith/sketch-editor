@@ -7,7 +7,7 @@ export interface Layer {
   index: number;
   name: string;
   opacity: number;
-  sketchElements: SketchElement[];
+  elements: SketchElement[];
 
   visible: boolean;
   locked: boolean;

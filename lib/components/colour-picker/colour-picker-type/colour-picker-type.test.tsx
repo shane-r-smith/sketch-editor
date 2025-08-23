@@ -2,7 +2,7 @@ import { render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { vi } from "vitest";
 import { ColourPickerType } from "./colour-picker-type";
-import type { ColourType } from "../colour-picker.types";
+import type { ColourType } from "../../../domain";
 
 describe("<ColourPickerType />", () => {
   const defaultProps = {
