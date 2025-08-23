@@ -34,6 +34,8 @@ export interface ToolWithColour {
 
 /** TOOLS */
 
+export type Tool = PenTool | EraserTool;
+
 /**
  * Represents the pen tool used in the sketch editor.
  * Extends the {@link BaseTool} and includes {@link ToolWithColour}.

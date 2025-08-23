@@ -3,7 +3,7 @@ import { CanvasElement } from "./canvas-element";
 import type { CanvasLayerProps } from "./canvas-layer.types";
 import { Layer as KonvaLayer } from "react-konva";
 
-export function CanvasLayer({ layer, element }: CanvasLayerProps) {
+export function CanvasLayer({ layer, drawingElement }: CanvasLayerProps) {
   if (!layer) {
     return null;
   }
@@ -22,9 +22,9 @@ export function CanvasLayer({ layer, element }: CanvasLayerProps) {
           opacity={layer.opacity}
         />
       ))}
-      {element && (
+      {drawingElement && (
         <CanvasElement
-          element={element}
+          element={drawingElement}
           offsetY={layer.index}
           opacity={layer.opacity}
         />

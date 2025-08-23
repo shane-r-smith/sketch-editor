@@ -73,7 +73,7 @@ exports[`<CanvasLayer /> > renders null if layer is undefined 1`] = `<div />`;
 
 exports[`<CanvasLayer /> > renders null if layer.visible is false 1`] = `<div />`;
 
-exports[`<CanvasLayer /> > renders the extra element 1`] = `
+exports[`<CanvasLayer /> > renders the drawing element 1`] = `
 <div
   data-testid="canvas-element"
 >

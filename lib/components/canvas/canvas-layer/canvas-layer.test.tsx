@@ -66,23 +66,29 @@ describe("<CanvasLayer />", () => {
 
   it("renders null if layer is undefined", () => {
     const { container } = render(
-      <CanvasLayer layer={undefined as unknown as Layer} element={undefined} />
+      <CanvasLayer
+        layer={undefined as unknown as Layer}
+        drawingElement={undefined}
+      />
     );
     expect(container).toMatchSnapshot();
   });
 
   it("renders null if layer.visible is false", () => {
     const { container } = render(
-      <CanvasLayer layer={{ ...layer, visible: false }} element={undefined} />
+      <CanvasLayer
+        layer={{ ...layer, visible: false }}
+        drawingElement={undefined}
+      />
     );
     expect(container).toMatchSnapshot();
   });
 
-  it("renders the extra element", () => {
+  it("renders the drawing element", () => {
     const { getAllByTestId } = render(
       <CanvasLayer
         {...defaultProps}
-        element={{
+        drawingElement={{
           tool: "PEN",
           points: [5, 5, 15, 15],
           stroke: "#FF00FF",
