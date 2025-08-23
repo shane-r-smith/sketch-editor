@@ -1,0 +1,97 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<CanvasLayer /> > renders correctly and matches snapshot 1`] = `
+<div>
+  <div
+    data-opacity="1"
+    data-testid="konva-layer"
+  >
+    <div
+      data-testid="canvas-element"
+    >
+      {
+  "element": {
+    "tool": "PEN",
+    "points": [
+      0,
+      0,
+      10,
+      10
+    ],
+    "stroke": "#000000",
+    "strokeWidth": 2,
+    "strokeColourType": "HEX"
+  },
+  "offsetY": 0,
+  "opacity": 1
+}
+    </div>
+    <div
+      data-testid="canvas-element"
+    >
+      {
+  "element": {
+    "tool": "PEN",
+    "points": [
+      0,
+      10,
+      10,
+      0
+    ],
+    "stroke": "#000000",
+    "strokeWidth": 2,
+    "strokeColourType": "HEX"
+  },
+  "offsetY": 0,
+  "opacity": 1
+}
+    </div>
+    <div
+      data-testid="canvas-element"
+    >
+      {
+  "element": {
+    "tool": "ERASER",
+    "points": [
+      0,
+      10,
+      10,
+      0
+    ],
+    "stroke": "#000000",
+    "strokeWidth": 2
+  },
+  "offsetY": 0,
+  "opacity": 1
+}
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<CanvasLayer /> > renders null if layer is undefined 1`] = `<div />`;
+
+exports[`<CanvasLayer /> > renders null if layer.visible is false 1`] = `<div />`;
+
+exports[`<CanvasLayer /> > renders the extra element 1`] = `
+<div
+  data-testid="canvas-element"
+>
+  {
+  "element": {
+    "tool": "PEN",
+    "points": [
+      5,
+      5,
+      15,
+      15
+    ],
+    "stroke": "#FF00FF",
+    "strokeWidth": 3,
+    "strokeColourType": "HEX"
+  },
+  "offsetY": 0,
+  "opacity": 1
+}
+</div>
+`;
