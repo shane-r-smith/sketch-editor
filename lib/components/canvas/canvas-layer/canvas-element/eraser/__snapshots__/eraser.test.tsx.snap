@@ -6,6 +6,7 @@ exports[`<Eraser /> > renders correctly and matches snapshot 1`] = `
     id="mocked-line"
   >
     {
+  "tool": "ERASER",
   "points": [
     0,
     0,

@@ -6,6 +6,7 @@ exports[`<Pen /> > renders correctly and matches snapshot 1`] = `
     id="mocked-line"
   >
     {
+  "tool": "PEN",
   "points": [
     0,
     0,

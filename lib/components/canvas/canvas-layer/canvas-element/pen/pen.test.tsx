@@ -13,7 +13,7 @@ vi.mock("react-konva", () => ({
 describe("<Pen />", () => {
   const defaultProps: CanvasElementProps = {
     element: {
-      key: "PEN",
+      tool: "PEN",
       points: [0, 0, 100, 100],
       stroke: "#00FF00",
       strokeWidth: 10,

@@ -9,7 +9,7 @@ export type ToolKey = "PEN" | "ERASER";
  */
 export interface BaseTool {
   /** Identifier for the tool. */
-  key: ToolKey;
+  tool: ToolKey;
 
   /** The icon displayed for the tool. */
   icon: ReactNode;
@@ -40,7 +40,7 @@ export interface ToolWithColour {
  */
 export interface PenTool extends BaseTool, ToolWithColour {
   /** The unique identifier for the pen tool */
-  key: "PEN";
+  tool: "PEN";
 }
 
 /**
@@ -49,5 +49,5 @@ export interface PenTool extends BaseTool, ToolWithColour {
  */
 export interface EraserTool extends BaseTool {
   /** The unique identifier for the eraser tool */
-  key: "ERASER";
+  tool: "ERASER";
 }

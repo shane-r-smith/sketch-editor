@@ -19,7 +19,7 @@ vi.mock("./eraser", () => ({
 describe("<CanvasElement />", () => {
   const baseProps: Omit<CanvasElementProps, "element"> = {};
 
-  const baseElement: Omit<SketchElement, "key"> = {
+  const baseElement: Omit<SketchElement, "tool"> = {
     points: [0, 0, 10, 10],
     stroke: "#000000",
     strokeWidth: 2,
@@ -28,7 +28,7 @@ describe("<CanvasElement />", () => {
   it("renders Pen when element.key is 'PEN'", () => {
     const element: SketchElement = {
       ...baseElement,
-      key: "PEN",
+      tool: "PEN",
       strokeColourType: "HEX",
     };
     const { container } = render(
@@ -40,7 +40,7 @@ describe("<CanvasElement />", () => {
   it("renders Eraser when element.key is 'ERASER'", () => {
     const element: SketchElement = {
       ...baseElement,
-      key: "ERASER",
+      tool: "ERASER",
     };
     const { container } = render(
       <CanvasElement element={element} {...baseProps} />

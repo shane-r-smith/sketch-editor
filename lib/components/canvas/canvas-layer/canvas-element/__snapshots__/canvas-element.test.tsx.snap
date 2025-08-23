@@ -15,7 +15,7 @@ exports[`<CanvasElement /> > renders Eraser when element.key is 'ERASER' 1`] = `
     ],
     "stroke": "#000000",
     "strokeWidth": 2,
-    "key": "ERASER"
+    "tool": "ERASER"
   }
 }
   </div>
@@ -37,7 +37,7 @@ exports[`<CanvasElement /> > renders Pen when element.key is 'PEN' 1`] = `
     ],
     "stroke": "#000000",
     "strokeWidth": 2,
-    "key": "PEN",
+    "tool": "PEN",
     "strokeColourType": "HEX"
   }
 }

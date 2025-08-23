@@ -4,7 +4,6 @@ exports[`createEraser > returns correct LineConfig for eraser 1`] = `
 {
   "globalCompositeOperation": "destination-out",
   "id": "eraser",
-  "key": "ERASER",
   "lineCap": "round",
   "lineStroke": "round",
   "points": [
@@ -16,6 +15,7 @@ exports[`createEraser > returns correct LineConfig for eraser 1`] = `
   "stroke": "#000000",
   "strokeWidth": 10,
   "tension": 0.5,
+  "tool": "ERASER",
   "x": 5,
   "y": 5,
 }
@@ -25,7 +25,6 @@ exports[`useEraser > returns memoized LineConfig 1`] = `
 {
   "globalCompositeOperation": "destination-out",
   "id": "eraser",
-  "key": "ERASER",
   "lineCap": "round",
   "lineStroke": "round",
   "points": [
@@ -37,6 +36,7 @@ exports[`useEraser > returns memoized LineConfig 1`] = `
   "stroke": "#000000",
   "strokeWidth": 10,
   "tension": 0.5,
+  "tool": "ERASER",
   "x": 5,
   "y": 5,
 }

@@ -4,7 +4,6 @@ exports[`createPen > returns correct LineConfig for pen 1`] = `
 {
   "globalCompositeOperation": "source-over",
   "id": "pen",
-  "key": "PEN",
   "lineCap": "round",
   "lineJoin": "round",
   "points": [
@@ -17,6 +16,7 @@ exports[`createPen > returns correct LineConfig for pen 1`] = `
   "strokeColourType": "HEX",
   "strokeWidth": 10,
   "tension": 0.5,
+  "tool": "PEN",
   "x": 5,
   "y": 5,
 }
@@ -26,7 +26,6 @@ exports[`usePen > returns memoized LineConfig 1`] = `
 {
   "globalCompositeOperation": "source-over",
   "id": "pen",
-  "key": "PEN",
   "lineCap": "round",
   "lineJoin": "round",
   "points": [
@@ -39,6 +38,7 @@ exports[`usePen > returns memoized LineConfig 1`] = `
   "strokeColourType": "HEX",
   "strokeWidth": 10,
   "tension": 0.5,
+  "tool": "PEN",
   "x": 5,
   "y": 5,
 }

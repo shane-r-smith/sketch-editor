@@ -13,7 +13,7 @@ vi.mock("react-konva", () => ({
 describe("<Eraser />", () => {
   const defaultProps: CanvasElementProps = {
     element: {
-      key: "ERASER",
+      tool: "ERASER",
       points: [0, 0, 100, 100],
       stroke: "#000000",
       strokeWidth: 10,

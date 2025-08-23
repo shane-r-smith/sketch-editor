@@ -6,7 +6,7 @@ import { renderHook } from "@testing-library/react";
 // Mock props for testing
 const baseProps: CanvasElementProps = {
   element: {
-    key: "ERASER",
+    tool: "ERASER",
     points: [0, 0, 10, 10],
     stroke: "#000000",
     strokeWidth: 10,

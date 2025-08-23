@@ -6,7 +6,7 @@ import { createPen, usePen } from "./pen.hooks";
 // Mock props for testing
 const baseProps: CanvasElementProps = {
   element: {
-    key: "PEN",
+    tool: "PEN",
     points: [0, 0, 10, 10],
     stroke: "#000000",
     strokeWidth: 10,
