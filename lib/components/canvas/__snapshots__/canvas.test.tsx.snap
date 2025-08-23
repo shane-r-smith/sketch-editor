@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Canvas /> > renders correctly and matches snapshot 1`] = `
+<div>
+  <div
+    data-testid="konva-stage"
+  >
+    <div
+      data-layer-id="1"
+      data-testid="canvas-layer"
+    />
+    <div
+      data-layer-id="2"
+      data-testid="canvas-layer"
+    >
+      <div
+        data-testid="canvas-element"
+      />
+    </div>
+  </div>
+</div>
+`;
