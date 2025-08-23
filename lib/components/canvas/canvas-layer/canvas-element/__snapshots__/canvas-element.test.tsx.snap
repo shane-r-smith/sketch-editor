@@ -1,0 +1,48 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<CanvasElement /> > renders Eraser when element.key is 'ERASER' 1`] = `
+<div>
+  <div
+    data-testid="eraser"
+  >
+    {
+  "element": {
+    "points": [
+      0,
+      0,
+      10,
+      10
+    ],
+    "stroke": "#000000",
+    "strokeWidth": 2,
+    "key": "ERASER"
+  }
+}
+  </div>
+</div>
+`;
+
+exports[`<CanvasElement /> > renders Pen when element.key is 'PEN' 1`] = `
+<div>
+  <div
+    data-testid="pen"
+  >
+    {
+  "element": {
+    "points": [
+      0,
+      0,
+      10,
+      10
+    ],
+    "stroke": "#000000",
+    "strokeWidth": 2,
+    "key": "PEN",
+    "strokeColourType": "HEX"
+  }
+}
+  </div>
+</div>
+`;
+
+exports[`<CanvasElement /> > renders null for unknown element.key 1`] = `<div />`;
