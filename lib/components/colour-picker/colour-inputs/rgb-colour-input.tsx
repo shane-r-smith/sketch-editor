@@ -88,6 +88,7 @@ export function RgbColourInput({
             },
           }}
           name="red"
+          size="small"
         />
       </Stack>
       <Stack>
@@ -105,6 +106,7 @@ export function RgbColourInput({
             },
           }}
           name="green"
+          size="small"
         />
       </Stack>
       <Stack>
@@ -122,6 +124,7 @@ export function RgbColourInput({
             },
           }}
           name="blue"
+          size="small"
         />
       </Stack>
     </Grid>
