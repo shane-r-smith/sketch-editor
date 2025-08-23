@@ -4,19 +4,21 @@ import { CanvasLayer } from "./canvas-layer";
 
 export function Canvas({
   layers,
-  layerIndex,
-  element,
+  currentLayerIndex,
+  drawingElement,
   ref,
   ...rest
 }: CanvasProps) {
   return (
     <>
       <Stage {...rest} ref={ref}>
-        {layers.map((layer) => (
+        {layers.map((layer, index) => (
           <CanvasLayer
             key={`layer_${layer.id}`}
             layer={layer}
-            element={layerIndex === layer.index ? element : undefined}
+            drawingElement={
+              currentLayerIndex === index ? drawingElement : undefined
+            }
           />
         ))}
       </Stage>

@@ -4,7 +4,6 @@ export const LAYER_NAME_MAX_LENGTH = 20;
 
 export interface Layer {
   id: string;
-  index: number;
   name: string;
   opacity: number;
   elements: SketchElement[];

@@ -7,9 +7,9 @@ import type { StageProps } from "react-konva";
 
 // Mock CanvasLayer to avoid rendering actual Konva components
 vi.mock("./canvas-layer", () => ({
-  CanvasLayer: ({ layer, element }: CanvasLayerProps) => (
+  CanvasLayer: ({ layer, drawingElement }: CanvasLayerProps) => (
     <div data-testid="canvas-layer" data-layer-id={layer?.id}>
-      {element && <div data-testid="canvas-element" />}
+      {drawingElement && <div data-testid="canvas-element" />}
     </div>
   ),
 }));
@@ -26,7 +26,6 @@ describe("<Canvas />", () => {
     layers: [
       {
         id: "1",
-        index: 0,
         name: "layer 1",
         opacity: 0,
         elements: [],
@@ -35,7 +34,6 @@ describe("<Canvas />", () => {
       },
       {
         id: "2",
-        index: 1,
         name: "layer 2",
         opacity: 0,
         elements: [],
@@ -43,7 +41,7 @@ describe("<Canvas />", () => {
         locked: false,
       },
     ],
-    layerIndex: 1,
+    currentLayerIndex: 1,
     element: <div data-testid="custom-element" />,
     ref: mockRef,
     width: 400,

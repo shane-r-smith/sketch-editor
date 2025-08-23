@@ -6,7 +6,7 @@ import type { Ref } from "react";
 
 export interface CanvasProps extends CanvasApi {
   drawingElement?: SketchElement;
-  layerIndex?: number;
+  currentLayerIndex?: number;
   layers: Layer[];
 
   ref: Ref<Stage>;
