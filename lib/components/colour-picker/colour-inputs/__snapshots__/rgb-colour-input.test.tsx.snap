@@ -1,0 +1,171 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<RgbColourInput /> > converts and renders correctly and matches snapshot when provided with HEX colour 1`] = `
+NodeList [
+  <input
+    aria-invalid="false"
+    class="MuiInputBase-input MuiOutlinedInput-input css-16wblaj-MuiInputBase-input-MuiOutlinedInput-input"
+    id="«r6»"
+    max="255"
+    min="0"
+    name="red"
+    type="number"
+    value="0"
+  />,
+  <input
+    aria-invalid="false"
+    class="MuiInputBase-input MuiOutlinedInput-input css-16wblaj-MuiInputBase-input-MuiOutlinedInput-input"
+    id="«r7»"
+    max="255"
+    min="0"
+    name="green"
+    type="number"
+    value="0"
+  />,
+  <input
+    aria-invalid="false"
+    class="MuiInputBase-input MuiOutlinedInput-input css-16wblaj-MuiInputBase-input-MuiOutlinedInput-input"
+    id="«r8»"
+    max="255"
+    min="0"
+    name="blue"
+    type="number"
+    value="255"
+  />,
+]
+`;
+
+exports[`<RgbColourInput /> > renders correctly and matches snapshot 1`] = `
+<div>
+  <div
+    class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-row MuiGrid-spacing-xs-0.5 css-1d2jkxl-MuiGrid-root"
+  >
+    <div
+      class="MuiStack-root css-nen11g-MuiStack-root"
+    >
+      <label
+        class="MuiFormLabel-root MuiFormLabel-colorPrimary absolute -top-6 text-sm font-medium css-nwsdb5-MuiFormLabel-root"
+      >
+        R
+      </label>
+      <div
+        class="MuiFormControl-root MuiTextField-root css-1xp5r68-MuiFormControl-root-MuiTextField-root"
+      >
+        <div
+          class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-quhxjy-MuiInputBase-root-MuiOutlinedInput-root"
+        >
+          <input
+            aria-invalid="false"
+            class="MuiInputBase-input MuiOutlinedInput-input css-16wblaj-MuiInputBase-input-MuiOutlinedInput-input"
+            id="«r0»"
+            max="255"
+            min="0"
+            name="red"
+            type="number"
+            value="255"
+          />
+          <fieldset
+            aria-hidden="true"
+            class="MuiOutlinedInput-notchedOutline css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              class="css-1nf2c5d-MuiNotchedOutlined-root"
+            >
+              <span
+                aria-hidden="true"
+                class="notranslate"
+              >
+                ​
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiStack-root css-nen11g-MuiStack-root"
+    >
+      <label
+        class="MuiFormLabel-root MuiFormLabel-colorPrimary absolute -top-5 css-nwsdb5-MuiFormLabel-root"
+      >
+        G
+      </label>
+      <div
+        class="MuiFormControl-root MuiTextField-root css-1xp5r68-MuiFormControl-root-MuiTextField-root"
+      >
+        <div
+          class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-quhxjy-MuiInputBase-root-MuiOutlinedInput-root"
+        >
+          <input
+            aria-invalid="false"
+            class="MuiInputBase-input MuiOutlinedInput-input css-16wblaj-MuiInputBase-input-MuiOutlinedInput-input"
+            id="«r1»"
+            max="255"
+            min="0"
+            name="green"
+            type="number"
+            value="0"
+          />
+          <fieldset
+            aria-hidden="true"
+            class="MuiOutlinedInput-notchedOutline css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              class="css-1nf2c5d-MuiNotchedOutlined-root"
+            >
+              <span
+                aria-hidden="true"
+                class="notranslate"
+              >
+                ​
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiStack-root css-nen11g-MuiStack-root"
+    >
+      <label
+        class="MuiFormLabel-root MuiFormLabel-colorPrimary absolute -top-5 css-nwsdb5-MuiFormLabel-root"
+      >
+        B
+      </label>
+      <div
+        class="MuiFormControl-root MuiTextField-root css-1xp5r68-MuiFormControl-root-MuiTextField-root"
+      >
+        <div
+          class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-quhxjy-MuiInputBase-root-MuiOutlinedInput-root"
+        >
+          <input
+            aria-invalid="false"
+            class="MuiInputBase-input MuiOutlinedInput-input css-16wblaj-MuiInputBase-input-MuiOutlinedInput-input"
+            id="«r2»"
+            max="255"
+            min="0"
+            name="blue"
+            type="number"
+            value="0"
+          />
+          <fieldset
+            aria-hidden="true"
+            class="MuiOutlinedInput-notchedOutline css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              class="css-1nf2c5d-MuiNotchedOutlined-root"
+            >
+              <span
+                aria-hidden="true"
+                class="notranslate"
+              >
+                ​
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
