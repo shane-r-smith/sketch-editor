@@ -41,16 +41,4 @@ export interface ColourPickerHistoryProps {
 
 export interface ColourPickerProps
   extends BaseColourPickerProps,
-    ColourPickerHistoryProps {
-  /**
-   * Label for the colour picker.
-   * This is used to describe the purpose of the picker.
-   */
-  label: string;
-
-  /**
-   * Optional description for the colour picker.
-   * This can be used to provide additional context or instructions.
-   */
-  helperText?: string;
-}
+    ColourPickerHistoryProps {}
