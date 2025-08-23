@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<ColourInput /> > renders HexColourInput when type is HEX 1`] = `
+<div>
+  <div>
+    {
+  "colour": "#ff0000",
+  "type": "HEX"
+}
+  </div>
+</div>
+`;
+
+exports[`<ColourInput /> > renders RgbColourInput when type is RGB 1`] = `
+<div>
+  <div>
+    {
+  "colour": "#ff0000",
+  "type": "RGB"
+}
+  </div>
+</div>
+`;
