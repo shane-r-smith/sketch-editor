@@ -1,0 +1,45 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`createPen > returns correct LineConfig for pen 1`] = `
+{
+  "globalCompositeOperation": "source-over",
+  "id": "pen",
+  "key": "PEN",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "points": [
+    0,
+    0,
+    10,
+    10,
+  ],
+  "stroke": "#000000",
+  "strokeColourType": "HEX",
+  "strokeWidth": 10,
+  "tension": 0.5,
+  "x": 5,
+  "y": 5,
+}
+`;
+
+exports[`usePen > returns memoized LineConfig 1`] = `
+{
+  "globalCompositeOperation": "source-over",
+  "id": "pen",
+  "key": "PEN",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "points": [
+    0,
+    0,
+    10,
+    10,
+  ],
+  "stroke": "#000000",
+  "strokeColourType": "HEX",
+  "strokeWidth": 10,
+  "tension": 0.5,
+  "x": 5,
+  "y": 5,
+}
+`;

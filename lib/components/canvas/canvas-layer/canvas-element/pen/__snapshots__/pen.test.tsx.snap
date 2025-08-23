@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<Eraser /> > renders correctly and matches snapshot 1`] = `
+exports[`<Pen /> > renders correctly and matches snapshot 1`] = `
 <div>
   <div
     id="mocked-line"
@@ -12,12 +12,13 @@ exports[`<Eraser /> > renders correctly and matches snapshot 1`] = `
     100,
     100
   ],
-  "stroke": "#000000",
+  "stroke": "#00FF00",
   "strokeWidth": 10,
+  "strokeColourType": "HEX",
   "tension": 0.5,
   "lineCap": "round",
-  "lineStroke": "round",
-  "globalCompositeOperation": "destination-out"
+  "lineJoin": "round",
+  "globalCompositeOperation": "source-over"
 }
   </div>
 </div>

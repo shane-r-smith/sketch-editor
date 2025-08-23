@@ -1,8 +1,8 @@
 import { render } from "@testing-library/react";
-import { Eraser } from "./eraser";
 import type { CanvasElementProps } from "../canvas-element.types";
 import { vi } from "vitest";
 import type { LineConfig } from "konva/lib/shapes/Line";
+import { Pen } from "./pen";
 
 vi.mock("react-konva", () => ({
   Line: (props: LineConfig) => (
@@ -10,18 +10,19 @@ vi.mock("react-konva", () => ({
   ),
 }));
 
-describe("<Eraser />", () => {
+describe("<Pen />", () => {
   const defaultProps: CanvasElementProps = {
     element: {
-      key: "ERASER",
+      key: "PEN",
       points: [0, 0, 100, 100],
-      stroke: "#000000",
+      stroke: "#00FF00",
       strokeWidth: 10,
+      strokeColourType: "HEX",
     },
   };
 
   it("renders correctly and matches snapshot", () => {
-    const { container } = render(<Eraser {...defaultProps} />);
+    const { container } = render(<Pen {...defaultProps} />);
     expect(container).toMatchSnapshot();
   });
 });
