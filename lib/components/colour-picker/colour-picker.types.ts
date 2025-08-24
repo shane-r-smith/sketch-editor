@@ -1,4 +1,4 @@
-export type ColourType = "HEX" | "RGB";
+import type { ColourType } from "../../domain";
 
 export interface BaseColourPickerProps {
   /**

@@ -1,0 +1,43 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`createEraser > returns correct LineConfig for eraser 1`] = `
+{
+  "globalCompositeOperation": "destination-out",
+  "id": "eraser",
+  "lineCap": "round",
+  "lineStroke": "round",
+  "points": [
+    0,
+    0,
+    10,
+    10,
+  ],
+  "stroke": "#000000",
+  "strokeWidth": 10,
+  "tension": 0.5,
+  "tool": "ERASER",
+  "x": 5,
+  "y": 5,
+}
+`;
+
+exports[`useEraser > returns memoized LineConfig 1`] = `
+{
+  "globalCompositeOperation": "destination-out",
+  "id": "eraser",
+  "lineCap": "round",
+  "lineStroke": "round",
+  "points": [
+    0,
+    0,
+    10,
+    10,
+  ],
+  "stroke": "#000000",
+  "strokeWidth": 10,
+  "tension": 0.5,
+  "tool": "ERASER",
+  "x": 5,
+  "y": 5,
+}
+`;

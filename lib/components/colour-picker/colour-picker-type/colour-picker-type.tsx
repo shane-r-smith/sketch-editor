@@ -1,8 +1,9 @@
-import type { BaseColourPickerProps, ColourType } from "../colour-picker.types";
+import type { BaseColourPickerProps } from "../colour-picker.types";
 
 import FormControl from "@mui/material/FormControl";
 import Select, { type SelectChangeEvent } from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
+import type { ColourType } from "../../../domain";
 
 export function ColourPickerType({
   colour,

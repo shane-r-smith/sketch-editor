@@ -1,0 +1,26 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Pen /> > renders correctly and matches snapshot 1`] = `
+<div>
+  <div
+    id="mocked-line"
+  >
+    {
+  "tool": "PEN",
+  "points": [
+    0,
+    0,
+    100,
+    100
+  ],
+  "stroke": "#00FF00",
+  "strokeWidth": 10,
+  "strokeColourType": "HEX",
+  "tension": 0.5,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "globalCompositeOperation": "source-over"
+}
+  </div>
+</div>
+`;

@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Eraser /> > renders correctly and matches snapshot 1`] = `
+<div>
+  <div
+    id="mocked-line"
+  >
+    {
+  "tool": "ERASER",
+  "points": [
+    0,
+    0,
+    100,
+    100
+  ],
+  "stroke": "#000000",
+  "strokeWidth": 10,
+  "tension": 0.5,
+  "lineCap": "round",
+  "lineStroke": "round",
+  "globalCompositeOperation": "destination-out"
+}
+  </div>
+</div>
+`;
