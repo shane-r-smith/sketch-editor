@@ -12,11 +12,7 @@ exports[`<Canvas /> > renders correctly and matches snapshot 1`] = `
     <div
       data-layer-id="2"
       data-testid="canvas-layer"
-    >
-      <div
-        data-testid="canvas-element"
-      />
-    </div>
+    />
   </div>
 </div>
 `;

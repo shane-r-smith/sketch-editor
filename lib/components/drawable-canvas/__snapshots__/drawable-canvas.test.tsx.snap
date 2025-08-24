@@ -1,0 +1,54 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<DrawableCanvas /> > matches snapshot when disabled 1`] = `
+<div>
+  <div
+    data-testid="canvas"
+  >
+    {
+  "width": 300,
+  "height": 150,
+  "disabled": true,
+  "ref": null,
+  "tool": {
+    "tool": "PEN",
+    "icon": "pen",
+    "stroke": "#FF0000",
+    "strokeWidth": 5,
+    "strokeColourType": "HEX",
+    "strokeColourHistory": []
+  },
+  "currentLayerIndex": 0,
+  "layers": []
+}
+     
+  </div>
+</div>
+`;
+
+exports[`<DrawableCanvas /> > matches snapshot when enabled 1`] = `
+<div>
+  <div
+    data-testid="canvas"
+  >
+    {
+  "width": 300,
+  "height": 150,
+  "disabled": false,
+  "ref": null,
+  "tool": {
+    "tool": "PEN",
+    "icon": "pen",
+    "stroke": "#FF0000",
+    "strokeWidth": 5,
+    "strokeColourType": "HEX",
+    "strokeColourHistory": []
+  },
+  "currentLayerIndex": 0,
+  "layers": [],
+  "drawingProp": "test"
+}
+     
+  </div>
+</div>
+`;
