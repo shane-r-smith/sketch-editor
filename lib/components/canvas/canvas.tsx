@@ -16,6 +16,7 @@ export function Canvas({
           <CanvasLayer
             key={`layer_${layer.id}`}
             layer={layer}
+            index={index}
             drawingElement={
               currentLayerIndex === index ? drawingElement : undefined
             }
