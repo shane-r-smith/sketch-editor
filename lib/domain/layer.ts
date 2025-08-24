@@ -1,13 +1,18 @@
 import type { SketchElement } from "./sketch-element";
+import { v6 as uuidv6 } from "uuid";
 
 export const LAYER_NAME_MAX_LENGTH = 20;
 
-export interface Layer {
-  id: string;
-  name: string;
-  opacity: number;
-  elements: SketchElement[];
+export class Layer {
+  id: string = uuidv6();
+  opacity: number = 1;
+  elements: SketchElement[] = [];
+  visible: boolean = true;
+  locked: boolean = false;
 
-  visible: boolean;
-  locked: boolean;
+  name: string;
+
+  constructor(index: number) {
+    this.name = `Layer ${index}`;
+  }
 }
