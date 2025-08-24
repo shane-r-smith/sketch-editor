@@ -27,7 +27,6 @@ describe("<CanvasLayer />", () => {
   const layer: Layer = {
     id: "layer-1",
     name: "layer-1",
-    index: 0,
     opacity: 1,
     elements: [
       {
@@ -57,6 +56,7 @@ describe("<CanvasLayer />", () => {
 
   const defaultProps: CanvasLayerProps = {
     layer: layer,
+    index: 0,
   };
 
   it("renders correctly and matches snapshot", () => {
@@ -64,20 +64,11 @@ describe("<CanvasLayer />", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("renders null if layer is undefined", () => {
-    const { container } = render(
-      <CanvasLayer
-        layer={undefined as unknown as Layer}
-        drawingElement={undefined}
-      />
-    );
-    expect(container).toMatchSnapshot();
-  });
-
   it("renders null if layer.visible is false", () => {
     const { container } = render(
       <CanvasLayer
         layer={{ ...layer, visible: false }}
+        index={0}
         drawingElement={undefined}
       />
     );

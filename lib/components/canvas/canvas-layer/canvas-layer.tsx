@@ -3,11 +3,11 @@ import { CanvasElement } from "./canvas-element";
 import type { CanvasLayerProps } from "./canvas-layer.types";
 import { Layer as KonvaLayer } from "react-konva";
 
-export function CanvasLayer({ layer, drawingElement }: CanvasLayerProps) {
-  if (!layer) {
-    return null;
-  }
-
+export function CanvasLayer({
+  layer,
+  index,
+  drawingElement,
+}: CanvasLayerProps) {
   if (!layer.visible) {
     return null;
   }
@@ -18,14 +18,14 @@ export function CanvasLayer({ layer, drawingElement }: CanvasLayerProps) {
         <CanvasElement
           key={i}
           element={element}
-          offsetY={layer.index}
+          offsetY={index}
           opacity={layer.opacity}
         />
       ))}
       {drawingElement && (
         <CanvasElement
           element={drawingElement}
-          offsetY={layer.index}
+          offsetY={index}
           opacity={layer.opacity}
         />
       )}
