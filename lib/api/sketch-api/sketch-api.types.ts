@@ -1,4 +1,4 @@
-import type { Sketch } from "../domain";
+import type { Sketch } from "../../domain";
 
 export interface ISketchApi {
   load: (sketch: Sketch) => void;

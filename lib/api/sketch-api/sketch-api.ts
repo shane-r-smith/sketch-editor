@@ -1,7 +1,7 @@
-import { Sketch } from "../domain";
+import { Sketch } from "../../domain";
 import type { ISketchApi } from "./sketch-api.types";
-import { sketchAtom } from "./sketch.state";
-import { sketchStore } from "../sketch.store";
+import { sketchAtom } from "./sketch-api.state";
+import { sketchStore } from "../../sketch.store";
 
 export class SketchApi implements ISketchApi {
   public load(sketch: Sketch): void {

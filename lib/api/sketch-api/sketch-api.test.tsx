@@ -1,7 +1,7 @@
-import { Sketch } from "../domain";
+import { Sketch } from "../../domain";
 import { SketchApi } from "./sketch-api";
-import { sketchStore } from "../sketch.store";
-import { sketchAtom } from "./sketch.state";
+import { sketchStore } from "../../sketch.store";
+import { sketchAtom } from "./sketch-api.state";
 
 vi.mock("uuid", () => ({
   v6: () => "mocked-unique-id",
