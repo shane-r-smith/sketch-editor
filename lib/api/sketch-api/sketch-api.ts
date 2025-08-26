@@ -2,8 +2,9 @@ import { Sketch } from "../../domain";
 import type { ISketchApi } from "./sketch-api.types";
 import { sketchAtom } from "./sketch-api.state";
 import { sketchStore } from "../../sketch.store";
+import { EventsApi } from "../events-api";
 
-export class SketchApi implements ISketchApi {
+export class SketchApi extends EventsApi implements ISketchApi {
   public load(sketch: Sketch): void {
     sketchStore.set(sketchAtom, sketch);
   }
