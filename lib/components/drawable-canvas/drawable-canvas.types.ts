@@ -1,13 +1,8 @@
-import type { Layer, SketchElement, Tool } from "../../domain";
+import type { DrawingState, Layer, SketchElement, Tool } from "../../domain";
 import type { Stage } from "konva/lib/Stage";
 import type { Ref } from "react";
 import type { CanvasApi } from "../canvas";
 import type { KonvaNodeEvents } from "react-konva";
-
-export interface DrawingState {
-  isDrawing: boolean;
-  hasLeftWhileDrawing?: boolean;
-}
 
 export interface DrawableCanvasProps extends DrawableCanvasApi {
   ref: Ref<Stage>;
