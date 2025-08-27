@@ -5,11 +5,3 @@ exports[`<SketchProvider /> > renders children correctly 1`] = `
   Test Child
 </div>
 `;
-
-exports[`<SketchProvider /> > uses the correct jotai Provider and store 1`] = `
-<div>
-  <span>
-    Child
-  </span>
-</div>
-`;
