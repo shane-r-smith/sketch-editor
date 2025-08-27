@@ -1,0 +1,59 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SketchApi > create > creates a new Sketch instance with given parameters 1`] = `
+Sketch {
+  "created": "2025-08-27T19:02:07.266Z",
+  "edited": "2025-08-27T19:02:07.266Z",
+  "frameRate": 30,
+  "id": "mocked-unique-id",
+  "name": "MySketch",
+  "pages": [
+    Page {
+      "id": "mocked-unique-id",
+      "layers": [
+        Layer {
+          "elements": [],
+          "id": "mocked-unique-id",
+          "locked": false,
+          "name": "Layer 1",
+          "opacity": 1,
+          "visible": true,
+        },
+      ],
+    },
+  ],
+  "size": [
+    200,
+    150,
+  ],
+}
+`;
+
+exports[`SketchApi > load > sets the sketch in the store 1`] = `
+Sketch {
+  "created": "2025-08-27T19:02:07.264Z",
+  "edited": "2025-08-27T19:02:07.264Z",
+  "frameRate": 60,
+  "id": "mocked-unique-id",
+  "name": "Test",
+  "pages": [
+    Page {
+      "id": "mocked-unique-id",
+      "layers": [
+        Layer {
+          "elements": [],
+          "id": "mocked-unique-id",
+          "locked": false,
+          "name": "Layer 1",
+          "opacity": 1,
+          "visible": true,
+        },
+      ],
+    },
+  ],
+  "size": [
+    100,
+    100,
+  ],
+}
+`;

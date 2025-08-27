@@ -1,37 +1,61 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 
-import { Button, Header } from "../lib/main";
+import {
+  Sketch,
+  SketchApi,
+  Workspace,
+  SketchProvider,
+  SketchEditor,
+} from "../lib/main";
+import { useEffect, useRef, useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const sketchApi = useRef(new SketchApi());
+
+  const [timeout, setCurrentTimeout] = useState<boolean>();
+
+  useEffect(() => {
+    sketchApi.current.load(new Sketch("Test Sketch", [1000, 1000], 12));
+  }, []);
+
+  useEffect(() => {
+    const requestSave = async (sketch: Sketch) => {
+      // if save is already requested - do nothing
+      if (timeout) {
+        return;
+      }
+
+      setCurrentTimeout(true);
+
+      // Call the save function
+      console.log("Auto saving sketch...", sketch);
+
+      setCurrentTimeout(false);
+    };
+
+    // Request saving operation on any changes
+    const off = sketchApi.current.on("SKETCH", (e: CustomEventInit<Sketch>) => {
+      //TODO: Save changes only.
+      if (!e.detail) {
+        return;
+      }
+
+      requestSave(e.detail);
+    });
+
+    return () => {
+      off();
+    };
+  }, [timeout]);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <Button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </Button>
-        <Header />
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="App">
+      <SketchProvider>
+        <SketchEditor>
+          <Workspace />
+        </SketchEditor>
+      </SketchProvider>
+    </div>
   );
 }
 

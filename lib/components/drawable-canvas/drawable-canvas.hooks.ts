@@ -1,10 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import type {
-  DrawableCanvasApi,
-  Drawing,
-  DrawingState,
-} from "./drawable-canvas.types";
-import type { SketchElement } from "../../domain";
+import type { DrawableCanvasApi, Drawing } from "./drawable-canvas.types";
+import type { DrawingState, SketchElement } from "../../domain";
 import type { KonvaEventObject } from "konva/lib/Node";
 
 const getSafeExitPosition = (
@@ -34,13 +30,13 @@ export const useDrawing = ({
   const [drawingElement, setDrawingElement] = useState<SketchElement>();
   const [drawingState, setDrawingState] = useState<DrawingState>({
     isDrawing: false,
-    hasLeftWhileDrawing: false,
+    hasLeftCanvasWhileDrawing: false,
   });
 
   const mouseUpOutsideListener = useMemo(() => {
     return () => {
       setDrawingElement(undefined);
-      setDrawingState({ isDrawing: false, hasLeftWhileDrawing: false });
+      setDrawingState({ isDrawing: false, hasLeftCanvasWhileDrawing: false });
       window.removeEventListener("mouseup", mouseUpOutsideListener); // Clean-up
     };
   }, []);
@@ -125,7 +121,7 @@ export const useDrawing = ({
   };
 
   const handleMouseEnter = (e: KonvaEventObject<MouseEvent>) => {
-    if (!drawingState.hasLeftWhileDrawing) {
+    if (!drawingState.hasLeftCanvasWhileDrawing) {
       return;
     }
 
@@ -133,7 +129,7 @@ export const useDrawing = ({
     window.removeEventListener("mouseup", mouseUpOutsideListener);
 
     // Renter drawing state
-    setDrawingState({ isDrawing: true, hasLeftWhileDrawing: false });
+    setDrawingState({ isDrawing: true, hasLeftCanvasWhileDrawing: false });
     const pos = e?.target?.getStage()?.getPointerPosition();
 
     setDrawingElement({
@@ -147,7 +143,7 @@ export const useDrawing = ({
       return;
     }
 
-    setDrawingState({ isDrawing: false, hasLeftWhileDrawing: true });
+    setDrawingState({ isDrawing: false, hasLeftCanvasWhileDrawing: true });
 
     // Save and stop drawing
     const pos = e?.target?.getStage()?.getPointerPosition();

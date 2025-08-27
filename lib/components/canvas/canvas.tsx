@@ -10,18 +10,17 @@ export function Canvas({
   ...rest
 }: CanvasProps) {
   return (
-    <>
-      <Stage {...rest} ref={ref}>
-        {layers.map((layer, index) => (
-          <CanvasLayer
-            key={`layer_${layer.id}`}
-            layer={layer}
-            drawingElement={
-              currentLayerIndex === index ? drawingElement : undefined
-            }
-          />
-        ))}
-      </Stage>
-    </>
+    <Stage {...rest} ref={ref}>
+      {layers.map((layer, index) => (
+        <CanvasLayer
+          key={`layer_${layer.id}`}
+          layer={layer}
+          index={index}
+          drawingElement={
+            currentLayerIndex === index ? drawingElement : undefined
+          }
+        />
+      ))}
+    </Stage>
   );
 }

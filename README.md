@@ -13,6 +13,7 @@ Below is a list of features that would be ideal to implement in the future. As t
 
 - [ ] Support custom and extensible theme overriding.
 - [ ] Decouple MUI from the project to allow developers to fully remove or replace it with their preferred UI library. The current implementation is tightly coupled to MUI.
+- [ ] Update the EventsApi to support both all objects and partial objects when subscribing, to facilitate different save type operations. E.G. [POST], [PATCH] apis.
 
 ## Expanding the ESLint configuration
 

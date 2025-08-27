@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<SketchEditor /> > matches snapshot 1`] = `
+<div>
+  <div
+    class="MuiStack-root css-1kbb7q6-MuiStack-root"
+  >
+    <div
+      class="MuiStack-root css-7hwbe1-MuiStack-root"
+    >
+      <div>
+        Workspace
+      </div>
+    </div>
+  </div>
+</div>
+`;
