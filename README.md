@@ -1,77 +1,73 @@
-# React + TypeScript + Vite
+# Sketch editor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight, experimental sketch editor library. A playground for trying out creative coding, drawing tools, and editing ideas.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+If you want to try it locally:
 
-## TODO: List of nice to haves
+```bash
+git clone https://github.com/shane-r-smith/sketch-editor.git
+cd sketch-editor
+npm install
+```
 
-Below is a list of features that would be ideal to implement in the future. As this is a passion project, these enhancements have not yet been prioritised or developed.
+### Install & Run
 
+This project is powered by [Vite](https://vite.dev) and is split into two parts:
+
+- `/lib` the core sketch editor library
+- `/src` a demo playground showcasing how to use the library
+
+### Development Mode
+
+Run a local demo environment with:
+
+```bash
+npm run dev
+```
+
+### Build the Library
+
+Generate a production-ready, g-zipped library build (from `/lib`):
+
+```bash
+npm run build
+```
+
+### Usage
+
+**Once published** on npm, developers can install and import the library into their projects:
+
+TODO: Document this usage guide + further supporting documentation.
+
+## Roadmap (aka “maybe someday”)
+
+- [x] Freehand drawing with mouse/touch
+- [ ] Write usage + support documentation
+- [ ] Setup npm repository
+- [ ] Setup CI/CD
+- [ ] Layers support
+- [ ] Pages support; to facilitate "flipbook" sketches as a GIF
+- [ ] Customizable colors and brush sizes
+- [ ] More brush types (spray, texture, calligraphy)
+- [ ] Shapes (lines, rectangles, circles, etc.)
+- [ ] Undo / Redo support
+- [ ] Export sketches as an image
+- [ ] Event API to facilitate persistence with any external api and database.
+  - [ ] Update the EventsApi to support both all objects and partial objects when subscribing, to facilitate different save type operations. E.G. [POST], [PATCH] apis.
+- [ ] Simple yet customisable sketch api to enable and configure setups
 - [ ] Support custom and extensible theme overriding.
 - [ ] Decouple MUI from the project to allow developers to fully remove or replace it with their preferred UI library. The current implementation is tightly coupled to MUI.
-- [ ] Update the EventsApi to support both all objects and partial objects when subscribing, to facilitate different save type operations. E.G. [POST], [PATCH] apis.
 
-## Expanding the ESLint configuration
+## Contributing
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This is a personal project, but if you find it fun and want to hack around, feel free to fork and open a PR. I’ll be happy to check it out!
 
-```js
-export default tseslint.config([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
+## License
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+MIT License – free to use, modify, and learn from.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+## Disclaimer
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
-
-export default tseslint.config([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+This is a for-fun side project, so expect rough edges, odd bugs, and maybe a dinosaur doodle or two.
