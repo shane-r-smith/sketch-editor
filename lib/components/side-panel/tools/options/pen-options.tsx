@@ -9,7 +9,8 @@ import Slider from "@mui/material/Slider";
 import Input from "@mui/material/Input";
 import { styled } from "@mui/material/styles";
 
-import { useState } from "react";
+import { useCallback } from "react";
+import type { ColourType } from "../../../../domain";
 
 const ColouredSlider = styled(Slider)<{ colour: string }>((props) => ({
   color: props.colour,
@@ -23,30 +24,59 @@ const ColouredSlider = styled(Slider)<{ colour: string }>((props) => ({
 
 export function PenOptions() {
   const [tool, setTool] = useAtom(selectedToolAtom);
-  const [value, setValue] = useState(30);
 
-  const handleSliderChange = (_event: Event, newValue: number) => {
-    setTool({ strokeWidth: newValue });
-    publish("TOOL");
-  };
+  const handleSliderChange = useCallback(
+    (_event: Event, strokeWidth: number) => {
+      setTool({ strokeWidth });
+      publish("TOOL");
+    },
+    [setTool]
+  );
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newValue = event.target.value === "" ? 1 : Number(event.target.value);
+  const handleInputChange = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const newValue =
+        event.target.value === "" ? 1 : Number(event.target.value);
 
-    setTool({
-      strokeWidth: newValue,
-    });
+      setTool({
+        strokeWidth: newValue,
+      });
 
-    publish("TOOL");
-  };
+      publish("TOOL");
+    },
+    [setTool]
+  );
 
-  const handleBlur = () => {
-    if (value < 1) {
-      setValue(1);
-    } else if (value > 1000) {
-      setValue(1000);
+  const handleBlur = useCallback(() => {
+    if (tool.strokeWidth < 1) {
+      setTool({ strokeWidth: 1 });
+    } else if (tool.strokeWidth > 1000) {
+      setTool({ strokeWidth: 1000 });
     }
-  };
+  }, [setTool, tool.strokeWidth]);
+
+  const handleColourChange = useCallback(
+    (stroke: string, strokeColourType: ColourType) => {
+      setTool({
+        stroke,
+        strokeColourType,
+      });
+
+      publish("TOOL");
+    },
+    [setTool]
+  );
+
+  const handleHistoryColourChange = useCallback(
+    (stroke: string) => {
+      setTool({
+        stroke,
+      });
+
+      publish("TOOL");
+    },
+    [setTool]
+  );
 
   if (tool.tool !== "PEN") {
     return null;
@@ -75,7 +105,7 @@ export function PenOptions() {
               onBlur={handleBlur}
               inputProps={{
                 step: 10,
-                min: 0,
+                min: 1,
                 max: 1000,
                 type: "number",
               }}
@@ -88,19 +118,8 @@ export function PenOptions() {
         colour={tool.stroke}
         history={tool.strokeColourHistory}
         numHistoryToShow={18}
-        onChange={(stroke, strokeColourType) => {
-          setTool({
-            stroke,
-            strokeColourType,
-          });
-
-          publish("TOOL");
-        }}
-        onColourSelected={(stroke) => {
-          setTool({
-            stroke,
-          });
-        }}
+        onChange={handleColourChange}
+        onColourSelected={handleHistoryColourChange}
       />
     </>
   );

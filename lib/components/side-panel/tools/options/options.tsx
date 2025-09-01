@@ -1,6 +1,7 @@
 import { useAtomValue } from "jotai";
 import { selectedToolKeyAtom } from "../../../../api/tools-api";
 import { PenOptions } from "./pen-options";
+import { EraserOptions } from "./eraser-options";
 
 export function ToolOptions() {
   const selectedToolKey = useAtomValue(selectedToolKeyAtom);
@@ -9,8 +10,7 @@ export function ToolOptions() {
     case "PEN":
       return <PenOptions />;
     case "ERASER":
-      return null;
-    // return <EraserOptions />;
+      return <EraserOptions />;
     default:
       return null;
   }
