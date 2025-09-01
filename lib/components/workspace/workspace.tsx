@@ -1,4 +1,4 @@
-import { useAtomValue, useSetAtom } from "jotai";
+import { useAtom, useAtomValue, useSetAtom } from "jotai";
 import {
   addElementAtom,
   currentLayerIndexAtom,
@@ -6,21 +6,27 @@ import {
   sketchAtom,
 } from "../../api/sketch-api/sketch-api.state";
 import { DrawableCanvas } from "../drawable-canvas";
-import { useCallback, useRef } from "react";
+import { useCallback, useRef, useState } from "react";
 import type { Stage } from "konva/lib/Stage";
 import type { DrawingState, SketchElement } from "../../domain";
 import { drawingAtom } from "../../api/drawing-api";
 import { publish } from "../../api/events-api";
 import Stack from "@mui/material/Stack";
-import { toolAtom } from "../../api/tools-api";
+import { selectedToolAtom } from "../../api/tools-api";
+import { Cursor } from "../cursor";
+import { colord } from "colord";
 
 export function Workspace() {
-  const tool = useAtomValue(toolAtom);
+  const [tool, setTool] = useAtom(selectedToolAtom);
   const sketch = useAtomValue(sketchAtom);
   const layers = useAtomValue(currentLayersAtom);
   const currentLayerIndex = useAtomValue(currentLayerIndexAtom);
   const addElement = useSetAtom(addElementAtom);
+
   const setDrawing = useSetAtom(drawingAtom);
+
+  const canvasRef = useRef<Stage>(null);
+  const [showCursor, setShowCursor] = useState(false);
 
   const _handleDraw = (element: SketchElement) => {
     // Add to store
@@ -28,6 +34,21 @@ export function Workspace() {
 
     // Call editor change events
     publish("SKETCH");
+
+    // Update stroke history
+    if ("strokeColourHistory" in tool) {
+      const hasCurrentColourInHistory = tool.strokeColourHistory
+        .filter((x) => x)
+        .map((x) => colord(x).toRgbString())
+        .includes(colord(tool.stroke).toRgbString());
+
+      if (!hasCurrentColourInHistory) {
+        const oldHistory = tool.strokeColourHistory.slice(0, 18);
+        setTool({ strokeColourHistory: [tool.stroke, ...oldHistory] });
+
+        publish("TOOL");
+      }
+    }
   };
 
   const _handleDrawing = useCallback(
@@ -42,7 +63,19 @@ export function Workspace() {
   }
 
   return (
-    <Stack width="100%" height="100%" bgcolor="grey.200" overflow="auto">
+    <Stack
+      width="100%"
+      height="100%"
+      bgcolor="grey.200"
+      overflow="auto"
+      onMouseEnter={() => {
+        setShowCursor(true);
+      }}
+      onMouseLeave={() => {
+        setShowCursor(false);
+      }}
+    >
+      {showCursor ? <Cursor /> : null}
       <Stack
         direction="row"
         width="100%"
