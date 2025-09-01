@@ -6,6 +6,8 @@ import {
   Workspace,
   SketchProvider,
   SketchEditor,
+  SidePanel,
+  WorkspaceWrapper,
 } from "../lib/main";
 import { useEffect, useRef, useState } from "react";
 
@@ -19,7 +21,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const requestSave = async (sketch: Sketch) => {
+    const requestSave = (sketch: Sketch) => {
       // if save is already requested - do nothing
       if (timeout) {
         return;
@@ -52,7 +54,10 @@ function App() {
     <div className="App">
       <SketchProvider>
         <SketchEditor>
-          <Workspace />
+          <SidePanel />
+          <WorkspaceWrapper>
+            <Workspace />
+          </WorkspaceWrapper>
         </SketchEditor>
       </SketchProvider>
     </div>

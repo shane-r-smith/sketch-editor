@@ -9,12 +9,13 @@ import { DrawableCanvas } from "../drawable-canvas";
 import { useCallback, useRef } from "react";
 import type { Stage } from "konva/lib/Stage";
 import type { DrawingState, SketchElement } from "../../domain";
-import { drawingAtom } from "../../api/drawing-api/drawing-api.state";
+import { drawingAtom } from "../../api/drawing-api";
 import { publish } from "../../api/events-api";
 import Stack from "@mui/material/Stack";
+import { toolAtom } from "../../api/tools-api";
 
 export function Workspace() {
-  const canvasRef = useRef<Stage>(null);
+  const tool = useAtomValue(toolAtom);
   const sketch = useAtomValue(sketchAtom);
   const layers = useAtomValue(currentLayersAtom);
   const currentLayerIndex = useAtomValue(currentLayerIndexAtom);
@@ -54,15 +55,7 @@ export function Workspace() {
       >
         <DrawableCanvas
           ref={canvasRef}
-          // TODO change tool
-          tool={{
-            tool: "PEN",
-            stroke: "#FF0000",
-            strokeWidth: 10,
-            strokeColourType: "HEX",
-            strokeColourHistory: [],
-            icon: "pen",
-          }}
+          tool={tool}
           layers={layers}
           currentLayerIndex={currentLayerIndex}
           onDraw={_handleDraw}
@@ -70,7 +63,7 @@ export function Workspace() {
           width={sketch.size[0]}
           height={sketch.size[1]}
           style={{
-            backgroundColor: "#FFF",
+            backgroundColor: "white",
             boxShadow:
               "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
           }}

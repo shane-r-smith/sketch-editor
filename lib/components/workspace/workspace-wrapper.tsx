@@ -1,21 +1,18 @@
 import Stack from "@mui/material/Stack";
 import type { PropsWithChildren } from "react";
 
-export function SketchEditor({
+export function WorkspaceWrapper({
   children,
-  className,
   ...rest
 }: PropsWithChildren<React.HTMLAttributes<HTMLElement>>) {
   return (
     <Stack
       flex={1}
-      flexDirection={"row"}
       position="relative"
       overflow="hidden"
-      width="100vw"
-      height="100vh"
-      maxHeight="100vh"
-      className={className ? `sketch-editor ${className}` : "sketch-editor"}
+      width="100%"
+      height="100%"
+      className="workspace-wrapper"
       {...rest}
     >
       {children}

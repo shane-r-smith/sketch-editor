@@ -1,5 +1,4 @@
 import type { ColourType } from "./colour";
-import type { ReactNode } from "react";
 
 /** Represents the unique keys for different drawing tools. */
 export type ToolKey = "PEN" | "ERASER";
@@ -10,9 +9,6 @@ export type ToolKey = "PEN" | "ERASER";
 export interface BaseTool {
   /** Identifier for the tool. */
   tool: ToolKey;
-
-  /** The icon displayed for the tool. */
-  icon: ReactNode;
 
   /** The points */
   stroke: string;
